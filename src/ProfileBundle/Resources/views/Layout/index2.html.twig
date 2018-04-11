@@ -1,0 +1,14 @@
+{% extends 'ProfileBundle::base.html.twig' %}
+
+{% block body %}
+    {{include('ProfileBundle:Layout:header.html.twig')}}
+
+    <section class="col-sm-12" style="background-image: url({{asset('bundles/profile/img/homura.jpg')}})">
+        <div class="page-content">
+            <div class="white-bg col-sm-6" style="background: #fff; padding: 10px;">
+                <h2>Welcome!</h2>
+                <p>Howdy-hoi! It's me your boi BLNK!</p>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

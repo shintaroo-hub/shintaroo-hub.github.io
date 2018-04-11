@@ -1,0 +1,26 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <title>{% block title %}Georgie{% endblock %}</title>
+        <link rel="stylesheet" href="{{asset('bundles/profile/css/layout.css')}}">
+        <link rel="stylesheet" href="{{asset('bundles/profile/css/bootstrap.min.css')}}">       
+
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    {% block page_stylesheets %}{% endblock %}
+
+    <script type="text/javascript" src="{{asset('bundles/profile/js/jquery-3.3.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('bundles/profile/js/particles.js')}}"></script>
+    <script type="text/javascript" src="{{asset('bundles/profile/js/bootstrap.min.js')}}"></script>
+{% block page_js %}{% endblock page_js %}
+    </head>   
+    <body class="{% block body_class %}page-md page-header-fixed page-quick-sidebar-over-content{% endblock %}">
+
+    {% block header %}{% endblock header %}    
+        <div id="body_content">
+        {% block body %}{% endblock %}
+        {% block page_css %}{% endblock page_css %}
+        </div>
+    </body>
+</html>

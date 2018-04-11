@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 30, 2018, 10:20:25 AM
+    Author     : amiranda
+*/
+
+#body_content{
+    background: #18253f;
+    font-family: 'Montserrat', sans-serif;
+}
+html, body{
+    height: 100%;
+    background: #18253f;
+}
+nav#sticky_nav {
+    /*background: #f0f1f7;*/
+    background: transparent;
+    position:fixed;
+    width:100%;
+}
+.para_intro, .para_intro_1{ 
+    /* Set a specific height */
+    height: 500px; 
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.para_intro_1{
+    background-image: url("{{asset('bundles/profile/img/dorse.jpg')}}");
+}
+#main-header{
+    text-align: center;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    right: 0;
+}
+#main-header .nav li a{
+    padding: 10px;
+    background: #fff
+}
+#main-header li {
+    display: inline-block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+#main-header .nav {
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+}
+.content_intro{
+    text-align:center;
+}
+.para_paragraph{
+    text-align: justify;
+    font-size: 18px;
+}
