@@ -123,5 +123,15 @@
             left: 1%;
             top: 50%;
         }
+        #particles-js .particles-js-canvas-el{
+            position: absolute;
+            z-index: 0;
+            top: 0;
+        }
     </style>
 {% endblock page_css %}
+{% block page_js %}
+    <script>
+        particlesJS.load('particles-js', '{{asset('bundles/profile/js/particles.json')}}');
+    </script>
+{% endblock page_js %}
