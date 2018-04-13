@@ -1,94 +1,41 @@
 {% extends 'ProfileBundle:Layout:index2.html.twig' %}
 
 {% block title %}Boi{% endblock %}
-{% block page_css %}
 
-    <style>
-        html, body{
-            background: #18253f;
-        }
-        .body-content{
-            height:100%;
-        }
-        /* NAVIGATION */
-        nav {
-            width: 100%;
-            margin: 0 auto;
-            background: #131e33;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style: none;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        nav ul li {
-            display: inline-block;
-        }
-        nav ul li a {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            color: #aaa;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin: 0 10px;
-        }
-        nav ul li a,
-        nav ul li a:after,
-        nav ul li a:before {
-            transition: all .5s;
-        }
-        nav ul li a:hover {
-            color: #555;
-            text-decoration: none;
-        }
-        /* SHIFT */
-        nav.shift ul li a {
-            position:relative;
-            z-index: 1;
-        }        
-
-
-        /* Brackets go out */
-        nav.shift a:before, nav.shift a:after
-        {
-            position: absolute;
-            opacity: 0;
-            font-size: 35px;
-            top: 0px;
-            transition: all 0.3s;
-        }
-        nav.shift li#profile_picture:after {
-            content: "TEST";
-            transform: translateX(-10px);
-            left: 0px;
-            opacity:0;
-        }
-
-        nav.shift a:before
-        {
-            content: '(';
-            left: 0px;
-            transform: translateX(10px);
-        }
-
-        nav.shift a:after
-        {
-            content: ')';
-            right: 0px;
-            transform: translateX(-10px);
-        }
-
-        nav.shift a:hover:before, nav.shift a:hover:after
-        {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-        nav.shift li#profile_picture:hover:after {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    </style>
-{% endblock page_css %}
+{% block body %}
+    {{include('ProfileBundle:Layout:header.html.twig')}}
+    <section class="col-sm-12" style="top: 15%;">
+        <div class="col-sm-12 page-header-img" style="padding: 55px 15px;top: 13%;">
+            <div class="page-content" style='display:flex;'>
+                <div class="col-sm-4" style="padding: 55px;color:#fff;">
+                    <h2>Welcome!</h2>
+                    <p>I am a web developer and occasional illustrator. I want to learn all about web design and web development.</p>
+                    <p>I am also open to learn about different technologies and techniques.</p>
+                </div>
+                <div class="col-sm-6" style="padding: 55px;color:#fff;text-align: end;">
+                    <img src='{{asset('bundles/profile/img/doge.jpg')}}' style='    height: 165px;border-radius: 100%;'>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 page-main-content" style="padding: 55px 15px;">
+            <div class="page-content" style='display:flex;'>
+                <div class="white-bg col-sm-6" style="padding: 10px;padding: 55px;color:#fff;">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="white-bg col-sm-6" style="padding: 10px;padding: 55px;color:#fff;">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 page-footer-img" style="padding: 55px 15px;">
+            <div class="page-content">
+                <div class="white-bg col-sm-4" style="padding: 10px;padding: 55px;color:#fff;">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
