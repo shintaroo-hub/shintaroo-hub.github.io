@@ -12,6 +12,6 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('ProfileBundle:Homepage:index2.html.twig');
+        return $this->render('ProfileBundle:Homepage:index.html.twig');
     }
 }
