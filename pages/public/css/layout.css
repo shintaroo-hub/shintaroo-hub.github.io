@@ -9,66 +9,64 @@ and open the template in the editor.
 */
 
 #body_content{
-    background: #18253f;
+    background: #fdc1c0;
     font-family: 'Montserrat', sans-serif;
 }
 html, body{
     height: 100%;
     background: #18253f;
 }
-nav#sticky_nav {
-    /*background: #f0f1f7;*/
-    background: transparent;
-    position:fixed;
-    width:100%;
-}
-.para_intro, .para_intro_1{ 
-    /* Set a specific height */
-    height: 500px; 
-    position: relative;
-    opacity: 0.65;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.para_intro_1{
-    background-image: url("{{asset('bundles/profile/img/dorse.jpg')}}");
-}
-#main-header{
-    text-align: center;
-    position: fixed;
-    top: 0%;
-    left: 0;
-    right: 0;
-}
-#main-header .nav li a{
-    padding: 10px;
-    background: #fff
-}
-#main-header li {
-    display: inline-block;
-    margin-top: 12px;
-    margin-bottom: 12px;
-}
-#main-header .nav {
-    margin: 0 auto;
-    display: inline-block;
-    width: 100%;
-}
-.content_intro{
-    text-align:center;
-}
-.para_paragraph{
-    text-align: justify;
-    font-size: 18px;
-}
 
 #home {
     padding: 0 10px;
-    color: #fff;
+    color: #535c8e;
     height: 100vh;
 }
+
+
+.header-profile-btn{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-top: 15px;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+}
+#main_header{
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+#main_header nav{
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+    background: #c6cbea;
+    align-items: flex-end;
+    align-items: center;
+}
+#main_header li, #main_header li a{
+    color: #738cf7;
+    list-style: none;
+}
+
+#main_header li a{
+    font-weight: bolder;
+    font-size: 20px;
+    color: #f77773;
+}
+#navbar-top-right, #navbar-top-left{
+    display: flex;
+}
+#navbar-top-right li, #navbar-top-left li{
+    padding: 10px 16px;           
+}
+#navbar-top-left{
+    font-size: 32px;
+}
+
 .flex {
     display: flex;
     flex-direction: column;
@@ -90,11 +88,10 @@ nav#sticky_nav {
     width: 100%;
     height: 100%;
     content: "";
-    background-image: url('../img/page-header2.jpg');
+    background-image: url('../img/bg2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center;
-    opacity:0.5;
 }
 
 @-webkit-keyframes arrow-float{
@@ -130,42 +127,6 @@ nav#sticky_nav {
     -webkit-animation: arrow-rotate-90 .3s ease-in forwards;
 }
 
-.header-profile-btn{
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    margin-top: 15px;
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-}
-#main_header{
-    width: 100vw;
-    position: absolute;
-    right: 0;
-    z-index: 1;
-}
-#main_header nav{
-    width:100vw;
-    display: flex;
-    justify-content: space-between;
-    background: #021d3a96;
-    align-items: flex-end;
-    align-items: center;
-}
-#main_header li, #main_header a{
-    color: #fff;
-    list-style: none;
-}
-#navbar-top-right, #navbar-top-left{
-    display: flex;
-}
-#navbar-top-right li, #navbar-top-left li{
-    padding: 10px 16px;           
-}
-#navbar-top-left{
-    font-size: 32px;
-}
 nav ul{
     margin: 0;
 }
