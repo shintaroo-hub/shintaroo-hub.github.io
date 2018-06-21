@@ -20,7 +20,7 @@
             <div class="flex">
                 <div class="text">
                     Hello!<br> 
-                    This is a test website created on github
+                    This is a test website created on by BLNK!
                 </div>           
             </div>
         </section>
