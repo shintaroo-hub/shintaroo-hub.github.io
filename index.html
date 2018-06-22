@@ -21,10 +21,10 @@
                     </div>
                     <div class="navbar-collapse collapse ml-auto">
                         <ul class="nav navbar-nav">
-                            <li><a href="#" data-loc="#home">Home</a></li>
-                            <li><a href="#" data-loc="#works">Works</a></li>
-                            <li><a href="#" data-loc="#pricing">Pricing</a></li>
-                            <li><a href="#" data-loc="#contact">Contact</a></li>
+                            <li><a href="#" class="page-link" data-loc="#home">Home</a></li>
+                            <li><a href="#" class="page-link" data-loc="#works">Works</a></li>
+                            <li><a href="#" class="page-link" data-loc="#pricing">Pricing</a></li>
+                            <li><a href="#" class="page-link" data-loc="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -103,4 +103,16 @@
             console.log()
             $("nav").find('[data-loc="#' + anchor + '"]').addClass('active');
         }
+
+        $('.page-link').click(function () {
+            var anchor = $(this).attr("data-loc");
+            $('.link-wrap').removeClass('visible');
+
+            $('nav span').removeClass('active');
+            $("nav").find('[data-loc="#' + anchor + '"]').addClass('active');
+console.log(anchor)
+            $('html, body').animate({                
+                scrollTop: $(anchor).offset().top
+            }, 400);
+        });
     </script>
