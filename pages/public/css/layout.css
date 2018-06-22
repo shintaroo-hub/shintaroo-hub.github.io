@@ -12,7 +12,7 @@ and open the template in the editor.
     background: #fdc1c0;
     font-family: 'Montserrat', sans-serif;
 }
-html, body{
+body{
     height: 100%;
     background: #18253f;
 }
@@ -57,16 +57,25 @@ html, body{
     font-size: 20px;
     color: #f77773;
 }
-#navbar-top-right, #navbar-top-left{
+
+#home .navbar{
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+}
+
+#navbar-top-right, .navbar-top-left{
     display: flex;
 }
 #navbar-top-right li, #navbar-top-left li{
     padding: 10px 16px;           
 }
-#navbar-top-left{
+.navbar-top-left{
     font-size: 32px;
 }
-
+.nav.navbar-nav{
+    text-align: center;
+}
 .flex {
     display: flex;
     flex-direction: column;
@@ -80,18 +89,25 @@ html, body{
     line-height: 36pt;
     text-align: center;
 }
-#home::after{
+#home::after, #works::after, #pricing::after{
     display: block;
     position: absolute;
     left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
-    content: "";
-    background-image: url('../img/bg2.jpg');
+    content: "";    
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center;
+}
+#home::after{
+    background-image: url('../img/bg3.jpg');
+}
+#works::after{
+    background-image: url('../img/bg3.jpg');
+}
+#pricing::after{
+    background-image: url('../img/bg3.jpg');
 }
 
 @-webkit-keyframes arrow-float{
@@ -129,6 +145,66 @@ html, body{
 
 nav ul{
     margin: 0;
+}
+nav .active {
+    border: 1px solid red;
+}
+
+@media (min-width: 768px){
+    .navbar-toggle {
+        display: none;
+    }
+    .ml-auto{
+        float:right;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.popr-item {
+    color: #444;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 2.8;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.full-h{
+    height: 100vh;
+}
+
+.pos-top{
+    position: fixed !important;
+    top: 0;
+    animation: fadeIn .1s ease-in both;
+}
+.pos-bottom{
+    position: absolute !important;
+    bottom: -6%;
+}
+.navbar {
+    left: 0;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background: #1B242F;
+    border-bottom: 3px solid #04C2C9;
+    text-align: left;
+    z-index: 99;
+}
+
+.no-margin{
+    margin: 0 !important;
 }
 .right{
     position:absolute;

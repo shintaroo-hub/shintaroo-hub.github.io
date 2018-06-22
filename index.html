@@ -2,41 +2,105 @@
     <head>
         <meta charset="UTF-8">
         <title>BLNK</title>
-        
+
         <link rel="stylesheet" href="pages/public/css/layout.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">             
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        
-        <script type="text/javascript" src="pages/public/js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="pages/public/js/particles.js"></script>
-        <script type="text/javascript" src="pages/public/js/bootstrap.min.js"></script>
-        
     </head>
     <body class="page-md page-header-fixed page-quick-sidebar-over-content">
         <div id="body_content">
-            <section id="main_header">
-                <nav>
-                    <ul id="navbar-top-left">
-                        <li>BLNK</li>
-                    </ul>
-                    <ul id="navbar-top-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Works</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+            <section id="navigation">
+                <nav class="navbar pos-bottom navbar-default no-margin">
+                    <div class="navbar-header"><a class="navbar-brand" href="#">BLNK!</a>
+                        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse ml-auto">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" data-loc="#home">Home</a></li>
+                            <li><a href="#" data-loc="#works">Works</a></li>
+                            <li><a href="#" data-loc="#pricing">Pricing</a></li>
+                            <li><a href="#" data-loc="#contact">Contact</a></li>
+                        </ul>
+                    </div>
                 </nav>
-
-            </section>  
-
+            </section>
             <section id="home" class="flex">
                 <div class="flex">
                     <div class="text">
                         Hello!<br> 
-                        This is a test website created on by BLNK!
+                        This is a test website created by BLNK!
+                    </div>                    
+                </div>                
+            </section>
+            <section id="works" class="flex full-h">
+                <div class="flex">
+                    <div class="text">
+                        Hello!<br> 
+                        This is a test website created by BLNK!
+                    </div>           
+                </div>
+            </section>
+            <section id="pricing" class="flex full-h">
+                <div class="flex">
+                    <div class="text">
+                        Hello!<br> 
+                        This is a test website created by BLNK!
+                    </div>           
+                </div>
+            </section>
+            <section id="contact" class="flex full-h">
+                <div class="flex">
+                    <div class="text">
+                        Hello!<br> 
+                        This is a test website created by BLNK!
                     </div>           
                 </div>
             </section>
         </div>
+        <!--<div style="height: 200vh;" class="dd">d</div>-->
     </body>
+    <script type="text/javascript" src="pages/public/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="pages/public/js/particles.js"></script>
+    <script type="text/javascript" src="pages/public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="pages/public/js/plugins/jquery-visible-master/jquery.visible.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var navPos = $('.navbar').position().top;
+            var lastPos = 0;
+            $(window).on('scroll', function () {
+                var pos = $(window).scrollTop();
+                var pos2 = pos + 50;
+                if (pos >= navPos + $('.navbar').height() && lastPos < pos) {
+                    $('.navbar').addClass('pos-top').removeClass('pos-bottom');
+                }
+                if (pos < navPos) {
+                    $('.navbar').addClass('pos-bottom').removeClass('pos-top');
+                    lastPos = pos;
+                }
+
+                if (pos2 > $('#home').offset().top) {
+                    highlightLink('home');
+                }
+                if (pos2 > $('#works').offset().top) {
+                    highlightLink('works');
+                }
+                if (pos2 > $('#pricing').offset().top) {
+                    highlightLink('pricing');
+                }
+                if (pos2 > $('#contact').offset().top) {
+                    highlightLink('contact');
+                }
+            });
+        });
+
+        function highlightLink(anchor) {
+            $('nav .active').removeClass('active');
+            console.log()
+            $("nav").find('[data-loc="#' + anchor + '"]').addClass('active');
+        }
+    </script>
